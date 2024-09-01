@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Dr. Kis Ivett Fogorvos | Professzionális Fogászati Ellátás Budapesten</title>
+    <meta name="description" content="Dr. Kis Ivett fogorvos Budapesten. Személyre szabott, magas színvonalú fogászati ellátás. Időpontfoglalás: +36 20 111 1111">
+    <link rel="canonical" href="https://www.drkisivett.hu/">
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Dr. Kis Ivett Fogorvos | Professzionális Fogászati Ellátás">
+    <meta property="og:description" content="Személyre szabott, magas színvonalú fogászati ellátás Budapesten. Időpontfoglalás: +36 20 111 1111">
+    <meta property="og:image" content="https://www.drkisivett.hu/images/dr-kis-ivett.jpg">
+    <meta property="og:url" content="https://www.drkisivett.hu/">
+    <meta property="og:type" content="website">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#fadadd',
+                        secondary: '#fff0f5',
+                        accent: '#d4006a',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-gray-800 m-0">
+    <div id="top-bar" class="bg-accent text-white py-2 mt-0">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex flex-col md:flex-row items-center mb-2 md:mb-0">
+                    <a href="mailto:drkisivett@gmail.com" class="mr-4 mb-2 md:mb-0">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>drkisivett@gmail.com</span>
+                    </a>
+                    <a href="tel:+36201111111">
+                        <i class="fas fa-mobile-alt mr-2"></i>
+                        <span>+36 20 111 1111</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex">
+                    <a href="#" class="mr-3" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <header id="sticky-header" class="sticky top-0 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <nav class="flex items-center justify-between">
+                <a class="flex-shrink-0" href="#">
+                    <img src="Untitled.png" alt="Dental Clinic Logo" id="logo" class="h-20 w-auto">
+                </a>
+                <button class="md:hidden" type="button" id="mobile-menu-button">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <div class="hidden md:flex md:items-center">
+                    <a class="px-3 py-2 text-accent hover:text-primary" href="#home">Főoldal</a>
+                    <a class="px-3 py-2 text-accent hover:text-primary" href="#about">Rólam</a>
+                    <a class="px-3 py-2 text-accent hover:text-primary" href="#services">Szolgáltatások</a>
+                    <a class="px-3 py-2 text-accent hover:text-primary" href="#contact">Kapcsolat</a>
+                    <a href="#contact" class="ml-4 px-4 py-2 bg-accent text-white rounded hover:bg-pink-600 transition duration-300" id="appointment-btn">Időpontfoglalás</a>
+                </div>
+            </nav>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a class="block px-3 py-2 text-accent hover:text-primary" href="#home">Főoldal</a>
+                <a class="block px-3 py-2 text-accent hover:text-primary" href="#about">Rólam</a>
+                <a class="block px-3 py-2 text-accent hover:text-primary" href="#services">Szolgáltatások</a>
+                <a class="block px-3 py-2 text-accent hover:text-primary" href="#contact">Kapcsolat</a>
+                <a href="#contact" class="block px-4 py-2 bg-accent text-white rounded hover:bg-pink-600 transition duration-300">Időpontfoglalás</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="py-16 bg-gradient-to-r from-secondary to-primary">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <h1 class="text-4xl font-bold mb-4 text-accent">Miért engem válasszon?</h1>
+                        <p class="mb-6">Amikor a fogászati ellátásról van szó, fontos, hogy a megfelelő fogorvost válassza. Nálam biztos lehet abban, hogy személyre szabott ellátásban részesül, hiszen minden pácienst egyénileg kezelek, az Ön igényeire szabva a kezeléseket, hogy a legjobb eredményeket érjük el. Többéves tapasztalattal és a legújabb fogászati technikák iránti elkötelezettséggel gondoskodom arról, hogy Ön magas színvonalú ellátásban részesüljön egy barátságos és professzionális környezetben. A rutinvizsgálatoktól a fejlett esztétikai beavatkozásokig teljes körű szolgáltatást nyújtok, hogy mosolya mindig a legjobb formában legyen.</p>
+                        <a href="#contact" class="inline-block px-6 py-3 bg-accent text-white rounded hover:bg-pink-700 hover:shadow-lg transform hover:-translate-y-1 transition duration-300 ease-in-out">Időpontfoglalás</a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="https://centralparkdentistrycc.com/wp-content/uploads/2020/03/central-park-female-dentist.jpeg" alt="Dental clinic interior" class="rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <img src="https://t4.ftcdn.net/jpg/02/64/39/59/240_F_264395936_2b6Xux9G1axkBix9qE6RlMaalbEuDXl6.jpg" alt="Dental clinic interior" class="rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    </div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <h2 class="text-3xl font-bold mb-4 text-accent">Rólam</h2>
+                        <p class="mb-4">Dr. Kis Ivett vagyok, 2024-ben szereztem a Debreceni Egyetem Fogorvostudományi Karán fogorvosi diplomámat. Ez év szeptemberében kezdtem el fogpótlástan rezidensi képzésemet az egyetem Fogpótlástani Tanszékén. Fogorvosként szenvedélyesen törekszem arra, hogy pácienseim számára a legmodernebb technikákat és a legfrissebb tudást alkalmazzam, így biztosítva a magas színvonalú kezeléseket. Számomra fontos, hogy barátságos és nyugodt légkört teremtsünk a rendelőben, ahol minden páciens biztonságban érezheti magát, és biztos lehet abban, hogy a legnagyobb odafigyeléssel gondoskodom mosolya egészségéről és szépségéről.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-16 bg-secondary">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center text-accent">Szolgáltatások</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <i class="fas fa-tooth text-4xl text-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Általános fogászat</h3>
+                        <p>Rutinvizsgálatok, tisztítás és megelőző kezelések a fogak egészségének megőrzéséért.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <i class="fas fa-smile-beam text-4xl text-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Esztétikai fogászat</h3>
+                        <p>Fogfehérítés, héjak és más esztétikai beavatkozások a tökéletes mosolyért.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <i class="fas fa-teeth-open text-4xl text-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Fogpótlás</h3>
+                        <p>Modern fogpótlási megoldások a hiányzó fogak pótlására és a funkció helyreállítására.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <i class="fas fa-child text-4xl text-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Gyermekfogászat</h3>
+                        <p>Speciális fogászati ellátás gyermekek számára, barátságos és nyugodt környezetben.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center text-accent">Kapcsolat</h2>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <div class="mb-8">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-map-marker-alt text-accent mr-4"></i>
+                                <a href="https://goo.gl/maps/yourAddress" class="hover:text-accent">Bolyai utca 2, 4032 Debrecen</a>
+                            </div>
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-phone text-accent mr-4"></i>
+                                <a href="tel:+36201111111" class="hover:text-accent">+36 20 111 1111</a>
+                            </div>
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-envelope text-accent mr-4"></i>
+                                <a href="mailto:drkisivettbernadett@gmail.com" class="hover:text-accent">drkisivettbernadett@gmail.com</a>
+                            </div>
+                        </div>
+                        <form id="contact-form" action="https://formsubmit.co/drkisivettbernadett@gmail.com" method="POST" class="space-y-4">
+                            <div class="relative">
+                                <i class="fas fa-user absolute top-3 left-3 text-gray-400"></i>
+                                <input type="text" class="w-full p-2 pl-10 border rounded focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300" name="name" placeholder="Név" required>
+                            </div>
+                            <div class="relative">
+                                <i class="fas fa-envelope absolute top-3 left-3 text-gray-400"></i>
+                                <input type="email" class="w-full p-2 pl-10 border rounded focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300" name="email" placeholder="E-mail" required>
+                            </div>
+                            <div class="relative">
+                                <i class="fas fa-phone absolute top-3 left-3 text-gray-400"></i>
+                                <input type="tel" class="w-full p-2 pl-10 border rounded focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300" name="phone" placeholder="Telefonszám">
+                            </div>
+                            <div class="relative">
+                                <i class="fas fa-comment absolute top-3 left-3 text-gray-400"></i>
+                                <textarea class="w-full p-2 pl-10 border rounded focus:ring-2 focus:ring-accent focus:border-transparent transition duration-300" name="message" placeholder="Üzenet" rows="4" required></textarea>
+                            </div>
+                            <input type="hidden" name="_subject" value="Új üzenet a weboldalról">
+                            <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+                            <button type="submit" class="w-full p-2 bg-accent text-white rounded hover:bg-pink-600 transition duration-300">Küldés</button>
+                        </form>
+                        <div id="form-success" class="hidden mt-4 p-4 bg-green-100 text-green-700 rounded">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            Köszönjük üzenetét! Hamarosan felvesszük Önnel a kapcsolatot.
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-8">
+                        <div id="map" class="h-96 rounded-lg shadow-lg"></div>
+                        <div class="mt-4 text-center">
+                            <a href="#" class="text-accent hover:text-pink-600 mx-2 transform hover:scale-110 transition duration-300" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-accent hover:text-pink-600 mx-2 transform hover:scale-110 transition duration-300" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-accent hover:text-pink-600 mx-2 transform hover:scale-110 transition duration-300" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+<!--
+    <footer class="bg-gradient-to-r from-secondary to-primary text-gray-800 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4 text-accent">Dr. Kis Ivett</h3>
+                    <p class="mb-4">A Debreceni Klinikán és a University Residence-ben talál meg.</p>
+                    <div class="flex items-center">
+                        <i class="far fa-clock text-accent mr-2"></i>
+                        <span>Kedden és Csütörtökön 16:30-tól 20:00 óráig</span>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4 text-accent">Elérhetőségeim</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-accent mr-2"></i>
+                            <span>Bolyai utca 2<br>4032, Debrecen</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-accent mr-2"></i>
+                            <a href="tel:+36201111111" class="hover:text-accent">+36 20 111 1111</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-accent mr-2"></i>
+                            <a href="mailto:drkisivettbernadett@gmail.com" class="hover:text-accent">drkisivettbernadett@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    -->
+        <div class="mt-8 pt-8 border-t border-gray-300">
+            <div class="container mx-auto px-4 text-center text-sm">
+                © Copyright • Dr. Kis Ivett Bernadett Fogorvos • Minden jog fenntartva • Az oldalt a <a href="https://www.marioszabo.net" target="_blank" class="text-accent hover:underline">marioszabo.net</a> készítette.
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-accent text-white p-2 rounded-full shadow-lg hover:bg-pink-700 transition duration-300 hidden">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

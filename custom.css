@@ -1,0 +1,77 @@
+:root {
+    --primary-color: #fadadd;
+    --secondary-color: #fff0f5;
+    --accent-color: #d4006a;
+    --text-color: #333;
+    --white: #fff;
+}
+
+body {
+    color: var(--text-color);
+}
+
+#logo {
+    height: 65.5px;
+    width: auto;
+}
+
+.btn {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 991.98px) {
+    header {
+        transition: top 0.3s ease-in-out;
+    }
+}
+
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 991.98px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+.mobile-nav {
+    display: none;
+}
+
+.mobile-nav.active {
+    display: block;
+}
+
+#form-success {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#form-success.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Leaflet map container */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+@media (max-width: 1023px) {
+    /* This corresponds to Tailwind's 'lg' breakpoint */
+}
