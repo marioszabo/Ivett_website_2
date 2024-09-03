@@ -73,10 +73,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add a marker for your dental clinic
         L.marker([lat, lng]).addTo(map)
             .bindPopup(`
-                <strong>Dr. Kis Ivett Fogorvos</strong><br>
+                <strong>Dr. Kis Ivett Bernadett Fogorvos</strong><br>
                 Bolyai utca 2<br>
                 4032, Debrecen<br>
-                <a href="tel:+36201111111">+36 20 111 1111</a>
+                <a href="tel:+36202467131">+36 20 246 7131</a>
             `)
             .openPopup();
 
