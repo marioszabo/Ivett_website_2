@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         L.marker([lat, lng]).addTo(map)
             .bindPopup(`
                 <strong>Dr. Kis Ivett Bernadett Fogorvos</strong><br>
-                Bolyai utca 2<br>
+                Nagyerdei Körút 98. <br>
                 4032, Debrecen<br>
                 <a href="tel:+36202467131">+36 20 246 7131</a>
             `)
